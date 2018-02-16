@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Resultballots list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Numbervote</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for resultBallot in resultBallots %}
+            <tr>
+                <td><a href="{{ path('resultballot_show', { 'id': resultBallot.id }) }}">{{ resultBallot.numberVote }}</a></td>
+                <td>{{ resultBallot.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('resultballot_show', { 'id': resultBallot.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('resultballot_edit', { 'id': resultBallot.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('resultballot_new') }}">Create a new resultBallot</a>
+        </li>
+    </ul>
+{% endblock %}

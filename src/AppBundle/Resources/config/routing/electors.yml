@@ -1,0 +1,24 @@
+electors_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Electors:index" }
+    methods:  GET
+
+electors_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Electors:show" }
+    methods:  GET
+
+electors_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Electors:new" }
+    methods:  [GET, POST]
+
+electors_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Electors:edit" }
+    methods:  [GET, POST]
+
+electors_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Electors:delete" }
+    methods:  DELETE

@@ -1,0 +1,24 @@
+ballot_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Ballot:index" }
+    methods:  GET
+
+ballot_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Ballot:show" }
+    methods:  GET
+
+ballot_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Ballot:new" }
+    methods:  [GET, POST]
+
+ballot_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Ballot:edit" }
+    methods:  [GET, POST]
+
+ballot_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Ballot:delete" }
+    methods:  DELETE

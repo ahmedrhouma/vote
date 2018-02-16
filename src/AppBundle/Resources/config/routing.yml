@@ -1,0 +1,4 @@
+app_admin:
+    resource: "@AppBundle/Resources/config/routing/admin.yml"
+    prefix:   /admin
+

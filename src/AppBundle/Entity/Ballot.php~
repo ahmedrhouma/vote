@@ -1,0 +1,71 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Ballot
+ *
+ * @ORM\Table(name="ballot", indexes={@ORM\Index(name="fk_Ballot_Event_idx", columns={"Event_id"})})
+ * @ORM\Entity
+ */
+class Ballot
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Language", type="string", length=45, nullable=true)
+     */
+    private $language;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Label", type="string", length=45, nullable=true)
+     */
+    private $label;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Description", type="string", length=45, nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Event
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Event")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Event_id", referencedColumnName="id")
+     * })
+     */
+    private $event;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Elector", mappedBy="ballot")
+     */
+    private $elector;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->elector = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

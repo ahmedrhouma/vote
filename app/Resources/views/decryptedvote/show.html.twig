@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Decryptedvote</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Decryptedvalue</th>
+                <td>{{ decryptedVote.decryptedValue }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ decryptedVote.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('decryptedvote_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('decryptedvote_edit', { 'id': decryptedVote.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

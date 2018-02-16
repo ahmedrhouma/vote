@@ -1,0 +1,24 @@
+encryptedvote_index:
+    path:     /
+    defaults: { _controller: "AppBundle:EncryptedVote:index" }
+    methods:  GET
+
+encryptedvote_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:EncryptedVote:show" }
+    methods:  GET
+
+encryptedvote_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:EncryptedVote:new" }
+    methods:  [GET, POST]
+
+encryptedvote_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:EncryptedVote:edit" }
+    methods:  [GET, POST]
+
+encryptedvote_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:EncryptedVote:delete" }
+    methods:  DELETE

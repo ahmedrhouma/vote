@@ -1,0 +1,43 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * DecryptedVote
+ *
+ * @ORM\Table(name="decrypted_vote", indexes={@ORM\Index(name="fk_Decrypted_vote_Encrypted_vote1_idx", columns={"Encrypted_vote_id"})})
+ * @ORM\Entity
+ */
+class DecryptedVote
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Decrypted value", type="string", length=45, nullable=true)
+     */
+    private $decryptedValue;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\EncryptedVote
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\EncryptedVote")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Encrypted_vote_id", referencedColumnName="id")
+     * })
+     */
+    private $encryptedVote;
+
+
+}
+

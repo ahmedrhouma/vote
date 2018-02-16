@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+ {% for form in advert %}
+    {{form.id}}
+    {{form.title}}
+    {{form.author}}
+   
+
+
+
+{% endfor %}
+
+{% endblock %}

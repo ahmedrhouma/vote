@@ -1,0 +1,11 @@
+AppBundle\Entity\Vote:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\VoteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }

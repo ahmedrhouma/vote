@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Electors list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Language</th>
+                <th>Natnum</th>
+                <th>Method</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for elector in electors %}
+            <tr>
+                <td><a href="{{ path('elector_show', { 'id': elector.id }) }}">{{ elector.firstName }}</a></td>
+                <td>{{ elector.lastName }}</td>
+                <td>{{ elector.language }}</td>
+                <td>{{ elector.natnum }}</td>
+                <td>{% if elector.method %}Yes{% else %}No{% endif %}</td>
+                <td>{{ elector.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('elector_show', { 'id': elector.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('elector_edit', { 'id': elector.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('elector_new') }}">Create a new elector</a>
+        </li>
+    </ul>
+{% endblock %}

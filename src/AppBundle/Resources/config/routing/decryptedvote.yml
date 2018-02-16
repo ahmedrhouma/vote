@@ -1,0 +1,24 @@
+decryptedvote_index:
+    path:     /
+    defaults: { _controller: "AppBundle:DecryptedVote:index" }
+    methods:  GET
+
+decryptedvote_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:DecryptedVote:show" }
+    methods:  GET
+
+decryptedvote_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:DecryptedVote:new" }
+    methods:  [GET, POST]
+
+decryptedvote_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:DecryptedVote:edit" }
+    methods:  [GET, POST]
+
+decryptedvote_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:DecryptedVote:delete" }
+    methods:  DELETE

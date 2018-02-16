@@ -1,0 +1,17 @@
+# src/OC/PlatformBundle/Resources/config/routing.yml
+
+accuiel_url:
+    path:     /accuiel
+    defaults: { _controller: OCPlatformBundle:Advert:index }
+add_url:
+    path:     /accuiel/add
+    defaults: { _controller: OCPlatformBundle:Advert:add }
+form_url:
+    path:     /accuiel/form
+    defaults: { _controller: OCPlatformBundle:Advert:form }
+index_url:
+    path:     /accuiel/index
+    defaults: { _controller: OCPlatformBundle:Advert:index }
+menu_url:
+    path:     /accuiel/menu
+    defaults: { _controller: OCPlatformBundle:Advert:menu }

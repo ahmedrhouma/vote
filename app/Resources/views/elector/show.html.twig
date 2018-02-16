@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Elector</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ elector.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ elector.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Language</th>
+                <td>{{ elector.language }}</td>
+            </tr>
+            <tr>
+                <th>Natnum</th>
+                <td>{{ elector.natnum }}</td>
+            </tr>
+            <tr>
+                <th>Method</th>
+                <td>{% if elector.method %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ elector.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('elector_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('elector_edit', { 'id': elector.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

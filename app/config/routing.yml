@@ -1,0 +1,71 @@
+app_result_ballot:
+    resource: "@AppBundle/Controller/ResultBallotController.php"
+    type:     annotation
+
+app_event:
+    resource: "@AppBundle/Controller/EventController.php"
+    type:     annotation
+
+app_encrypted_vote:
+    resource: "@AppBundle/Controller/EncryptedVoteController.php"
+    type:     annotation
+
+app_elector:
+    resource: "@AppBundle/Controller/ElectorController.php"
+    type:     annotation
+
+app_decrypted_vote:
+    resource: "@AppBundle/Controller/DecryptedVoteController.php"
+    type:     annotation
+
+app_candidate:
+    resource: "@AppBundle/Controller/CandidateController.php"
+    type:     annotation
+
+app_ballot:
+    resource: "@AppBundle/Controller/BallotController.php"
+    type:     annotation
+
+app_admin:
+    resource: "@AppBundle/Controller/AdminController.php"
+    type:     annotation
+
+app_event:
+    resource: "@AppBundle/Controller/EventController.php"
+    type:     annotation
+
+app_encrypted_vote:
+    resource: "@AppBundle/Controller/EncryptedVoteController.php"
+    type:     annotation
+
+app_decrypted_vote:
+    resource: "@AppBundle/Controller/DecryptedVoteController.php"
+    type:     annotation
+
+app_ballot:
+    resource: "@AppBundle/Controller/BallotController.php"
+    type:     annotation
+
+app_admin:
+    resource: "@AppBundle/Controller/AdminController.php"
+    type:     annotation
+
+app_event:
+    resource: "@AppBundle/Controller/EventController.php"
+    type:     annotation
+
+
+
+
+
+app_ballot:
+    resource: "@AppBundle/Controller/BallotController.php"
+    type:     annotation
+
+oc_platform:
+    resource: "@OCPlatformBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
